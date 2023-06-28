@@ -21,7 +21,7 @@ const httpTransportOptions = {
 };
 
 const dailyRotateFileTransport = new transports.DailyRotateFile({
-  filename: `${logDir}/io-api-%DATE%.log`,
+  filename: `${logDir}/pizzas-api-%DATE%.log`,
   datePattern: "YYYY-MM-DD",
   zippedArchive: true, // writes to gzip archive
   maxSize: "200m", // use only integer for number bytes, or add suffix of k, m, or g for kilobytes, megabytes and gigabytes respectively
