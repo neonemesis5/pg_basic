@@ -1,12 +1,22 @@
-const UsuarioModel= require('..models/UsuarioModel');
-const { loginschema } = require('../middlewares/validations/user.validation');
+const UsuarioModel = require("..models/UsuarioModel");
+const { loginschema } = require("../middlewares/validations/user.validation");
 
 async function singIn(params) {
-    const response = {
-        message:"error",
-        status:400,
-        data:null,
-    };
-    const { login, password }= await loginschema.validateAsync(params);
-    console.log("===> ",login,password);
+  const response = {
+    message: "error",
+    status: 400,
+    data: null
+  };
+
+  try {
+    const { login, password } = await loginschema.validateAsync(params);
+    console.log("===> ", login, password);
+  } catch (error) {
+    response.message = "Error en acceso a la DB ";
+    response.status = 500;
+  }
+  return response;
 }
+module.exports = {
+  singIn,
+};
