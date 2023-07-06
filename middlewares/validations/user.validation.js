@@ -1,10 +1,10 @@
-const Joi = requier("joi");
+const Joi = require("joi");
 
-const loginschema = Joi.object({
-    login: Joi.string().requiered(),
-    password:Joi.string().required(),
+const loginSchema = Joi.object({
+  login: Joi.string().required(),
+  password: Joi.string().required(),
 });
+
 module.exports = {
-    loginschema,   
-  };
-  
+  loginSchema,
+};

@@ -29,8 +29,8 @@ UsuarioModel.init({
 }, {
     underscored: true,
     modelName: "usuario",
-  tableName: 'usuarios',
-  timestamps: false,
-  sequelize,
+    tableName: 'usuarios',
+    timestamps: false,
+    sequelize,
 });
 module.exports = UsuarioModel;

@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === "dev") {
 //definiendo las rutas 
 // const usersRoutes = require("./routes/users.route");
 const usersRoutes = require("./routes/users.route");
-app.use('/user', usersRoutes);
+app.use('/user', usersRoutes);// la ruta en la url es la definida en en las comillas, mientras que quien la atiende es la que posee la palabra route
 
 app.use((req, res, next) => {
   const err = new Error(
