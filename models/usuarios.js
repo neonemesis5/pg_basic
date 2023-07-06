@@ -2,9 +2,9 @@
 const { Model, DataTypes, UUIDV4, literal } = require("sequelize");
 const { sequelize } = require("../config/database");
 
-class Usuario extends Model {}
+class UsuarioModel extends Model {}
 
-Usuario.init({
+UsuarioModel.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -33,4 +33,4 @@ Usuario.init({
   timestamps: false,
   sequelize,
 });
-module.exports = Usuario;
+module.exports = UsuarioModel;
