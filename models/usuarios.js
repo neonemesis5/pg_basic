@@ -25,7 +25,11 @@ UsuarioModel.init({
   },
   status: {
     type: DataTypes.STRING(1)
-  }
+  },
+  last_logged: {
+    type: DataTypes.DATE,
+    allowNull: true
+  },
 }, {
     underscored: true,
     modelName: "usuario",

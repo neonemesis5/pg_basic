@@ -12,14 +12,12 @@ const  { singIn }= require("../services/user_service");
 
 class User{
     static async login(req, res) {
-        console.log("-->llego login");
         try {
-          // const response=singIn(req);
-          return res.status(200).send(null );
+          const response=await singIn(req.body);
+          return res.status(200).send(response);
         } catch (error) {
           return res.status(500).send({message:"error -> ",error});
         }
-       
     }
 
     static async getUser(req, res) {

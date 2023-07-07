@@ -3,11 +3,15 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controller/api_user.controller');
+const { autenticarJWT } = require('../middlewares/JWT');
 
-router.get('/:id', usersController.getUser);
-// router.post('/', usersController.create);
+
+// Rutas protegidas con JWT
+router.get('/:id', autenticarJWT, usersController.getUser);
+router.put('/:id', autenticarJWT, usersController.updateUser);
+router.delete('/:id', autenticarJWT, usersController.deleteUser);
+
+// Rutas públicas
 router.post('/', usersController.login);
-router.put('/:id', usersController.updateUser);
-router.delete('/:id', usersController.deleteUser);
 
 module.exports = router;
