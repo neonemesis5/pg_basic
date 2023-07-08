@@ -46,6 +46,10 @@ if (process.env.NODE_ENV === "dev") {
 const usersRoutes = require("./routes/users.route");
 app.use('/user', usersRoutes);// la ruta en la url es la definida en en las comillas, mientras que quien la atiende es la que posee la palabra route
 
+const opcabanRouter  = require("./routes/opcajabanco.route");
+app.use("/opcajaban",opcabanRouter);
+
+
 app.use((req, res, next) => {
   const err = new Error(
     "The requested route does not exist, or the call method is invalid."

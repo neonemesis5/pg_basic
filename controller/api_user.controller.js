@@ -1,6 +1,3 @@
-
-
-
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const bcrypt = require("bcrypt");
@@ -23,6 +20,7 @@ class User{
     static async getUser(req, res) {
         // Agrega la lógica para obtener un usuario con el ID proporcionado
         console.log("llego getuser --->");
+        //aqui llamar previamente a funcion que realice validacion de acceso a endpoint 
         return res.status(200).send({message:"fin"});
     }
     

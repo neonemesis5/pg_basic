@@ -11,15 +11,18 @@ function autenticarJWT(req, res,next) {
     data:null,
   }
   try {
-    // console.log("=====>>>>",req);
+    // console.log("=====>>>>",req.originalUrl);
+    
     //  const token = req.header("token");
     const token = req.headers.authorization?.split(' ')[1];
-    console.log("-->",token);
+    // console.log("-->",token);
     if (token) {
       const verified = jwt.verify(token, process.env.SECRET_KEY);
       if(verified){
         // console.log("==>",verified);
-        req.usuario = verified;
+/***************aqui se debe validar el acceso al endpoint****************/
+//se llama a servicio de validacion de endpoint         
+        req.usuario = verified.id;
         next();
       }else{
         response.message="token invalido";
