@@ -22,8 +22,9 @@ class User{
 
     static async getUser(req, res) {
         // Agrega la lógica para obtener un usuario con el ID proporcionado
-        //console.log("llego getuser --->", req);
-      }
+        console.log("llego getuser --->");
+        return res.status(200).send({message:"fin"});
+    }
     
       static async updateUser(req, res) {
         // Agrega la lógica para actualizar un usuario con el ID proporcionado
