@@ -4,20 +4,30 @@ const db = require("../config/database");
 require("dotenv").config();
 
 
-function autenticarJWT(req, res, next) {
-  const token = req.headers.authorization?.split(' ')[1];
-  if (token) {
-    jwt.verify(token, process.env.SECRETE_KEY, (error, decoded) => {
-      if (error) {
-        return res.status(401).json({ error: 'Token inválido' });
-      } else {
-        req.usuario = decoded;
-        next();
-      }
-    });
-  } else {
-    res.status(401).json({ error: 'Token no proporcionado' });
+function autenticarJWT(req, res) {
+  const response={
+    message:"Token no proporcionado",
+    status:401,
+    data:null,
   }
+  try {
+     const token = req.header("token");
+    if (token) {
+      const verified = jwt.verify(token, process.env.SECRET_KEY);
+      if(verified){
+        // console.log("==>",verified);
+        response.data=verified;
+        response.status=200;
+        response.message="user Valid"
+      }else{
+        response.message="token invalido";
+      }
+    }
+  } catch (error) {
+    response.message="error procesando token";
+    response.status=500;
+  }
+  return  res.status(response.status).json(response);
 }
 module.exports ={
   autenticarJWT,

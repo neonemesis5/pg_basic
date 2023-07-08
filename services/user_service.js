@@ -20,9 +20,7 @@ async function singIn(params) {
       const token = jwt.sign(
         {
           id: oneClient.id,
-          login: oneClient.login,
-          rol_id: oneClient.code_role,
-          // zona:oneClient.zona,
+          rol_id: oneClient.rol_id,
         },
         process.env.SECRET_KEY,
         {
@@ -32,7 +30,7 @@ async function singIn(params) {
 
       const last_logged = moment.utc().toISOString();
       oneClient.last_logged = last_logged;
-console.log("-- ",last_logged);
+// console.log("-- ",last_logged);
        await oneClient.save();
       response.data=token;
       response.status=200;
