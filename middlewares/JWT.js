@@ -19,10 +19,13 @@ function autenticarJWT(req, res,next) {
     if (token) {
       const verified = jwt.verify(token, process.env.SECRET_KEY);
       if(verified){
-        // console.log("==>",verified);
+        // console.log("verifid ==>",verified);
 /***************aqui se debe validar el acceso al endpoint****************/
 //se llama a servicio de validacion de endpoint         
+// tambien hay que validar que el usuario con acceso su session tenga fecha de logged anterior a cada operacion que realice es decir 
+//si realiza alguna operacion posterior su logged debe ser anterior para esa sucursal y solo puede estar activo en una sucursal
         req.usuario = verified.id;
+        req.sucursal = verified.sucursal;
         next();
       }else{
         response.message="token invalido";

@@ -2,9 +2,10 @@ const  { registrarIngreso }= require("../services/opcaban_service");
 class OpCajaBanco{
 
     static async aperturaCaja(req, res) {
-        try {
+        try { //console.log("--->>>>",req);
           const params = {
             usuarioId: req.usuario,
+            sucursal: req.sucursal,
             ...req.body
           };
           const response= await registrarIngreso(params);

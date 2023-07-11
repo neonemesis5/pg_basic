@@ -9,14 +9,19 @@ MovimientosCajaban.init({
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        // allowNull: false,
-        autoIncrement: true
+        allowNull: false,
+        field: 'id',
+        defaultValue: sequelize.literal('nextval(\'seq_movcb\')'),
       },
       usuarios_id: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
       tipooperacion_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      sucursal_id:{
         type: DataTypes.INTEGER,
         allowNull: false
       },
