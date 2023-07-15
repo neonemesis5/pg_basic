@@ -1,9 +1,9 @@
 // Database
 const { Model, DataTypes, UUIDV4, literal } = require("sequelize");
 const { sequelize } = require("../config/database");
-class CategoriaProducto  extends Model {}
+class catProductoModel  extends Model {}
 
-CategoriaProducto.init({
+catProductoModel.init({
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -14,11 +14,11 @@ CategoriaProducto.init({
     allowNull: false
   }
 }, {
-        modelName:"CategoriaProducto",
+        modelName:"catProductoModel",
         tableName: "categoria_producto",
         underscored: true,
         timestamps: false,
         sequelize,
 });
 
-module.exports = CategoriaProducto;
+module.exports = catProductoModel;

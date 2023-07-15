@@ -3,7 +3,7 @@ const { loginSchema  } = require("../middlewares/validations/user.validation");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 const moment = require("moment");
-const SucursalUsuario = require("../models/user_sucursal");
+const SucUsuario = require("../models/user_sucursal");
 const Sucursal = require("../models/sucursal"); 
 async function singIn(params) {
   const response = {
@@ -18,7 +18,7 @@ async function singIn(params) {
   if (oneClient){
     const validatePass = await bcrypt.compare(password, oneClient.password);
     if (validatePass) {
-       const findUserSuc=await SucursalUsuario.findOne( { where: { sucursal_id: sucursalId } });
+       const findUserSuc=await SucUsuario.findOne( { where: { sucursal_id: sucursalId } });
       //  console.log("===-->>>",findUserSuc);
       if(findUserSuc.is_active === 'T'){
         if(findUserSuc.usuarios_id === oneClient.id){

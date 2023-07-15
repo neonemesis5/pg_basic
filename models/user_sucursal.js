@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const { sequelize } = require("../config/database");
 
-class SucursalUsuario extends Model {}
+class SucUsuario extends Model {}
 
-SucursalUsuario.init({
+SucUsuario.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -39,10 +39,12 @@ SucursalUsuario.init({
   }
 }, {
   sequelize,
-  modelName: 'SucursalUsuario',
+  modelName: 'SucUsuario',
   tableName: 'sucursal_usuario',
   timestamps: false,
-  underscored: true
+  underscored: true,
+  // freezeTableName:true
+
 });
 
-module.exports = SucursalUsuario;
+module.exports = SucUsuario;

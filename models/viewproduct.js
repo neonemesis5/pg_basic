@@ -8,68 +8,56 @@ viewProductos.init({
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
   },
   nombre: {
     type: DataTypes.STRING,
-    allowNull: false
   },
   cod_barra: {
     type: DataTypes.STRING,
-    allowNull: false
   },
   descripcion: {
     type: DataTypes.STRING,
-    allowNull: false
+  },
+  idproducto: {
+    type: DataTypes.INTEGER,
   },
   idcategoria: {
     type: DataTypes.INTEGER,
-    allowNull: false
   },
   nomcategoria: {
     type: DataTypes.STRING,
-    allowNull: false
   },
   idtamanio: {
     type: DataTypes.INTEGER,
-    allowNull: false
   },
   nomtamanio: {
     type: DataTypes.STRING,
-    allowNull: false
   },
   idpresentacion: {
     type: DataTypes.INTEGER,
-    allowNull: false
   },
   nompresentacion: {
     type: DataTypes.STRING,
-    allowNull: false
   },
   idsucursal: {
     type: DataTypes.INTEGER,
-    allowNull: false
   },
   nomsucursal: {
     type: DataTypes.STRING,
-    allowNull: false
   },
   cantidad: {
-    type: DataTypes.INTEGER,
-    allowNull: false
+    type: DataTypes.DECIMAL(5, 2),
   },
   precio_usd: {
-    type: DataTypes.FLOAT,
-    allowNull: false
+    type: DataTypes.DECIMAL(5, 2),
   },
   precio_cop: {
-    type: DataTypes.FLOAT,
-    allowNull: false
+    type: DataTypes.DECIMAL(12, 4),
   },
   precio_bss: {
-    type: DataTypes.FLOAT,
-    allowNull: false
-  }
+    type: DataTypes.DECIMAL(12, 4),
+  },
 }, {
   underscored: true,
   modelName: "viewProductos",

@@ -26,6 +26,7 @@ function autenticarJWT(req, res,next) {
 //si realiza alguna operacion posterior su logged debe ser anterior para esa sucursal y solo puede estar activo en una sucursal
         req.usuario = verified.id;
         req.sucursal = verified.sucursal;
+        req.rol= verified.rol_id;
         next();
       }else{
         response.message="token invalido";
