@@ -56,6 +56,10 @@ app.use("/productos",ProductsRoute);
 const PedidoRouter=require("./routes/pedidodet.route");
 app.use("/pedidos",PedidoRouter);
 
+
+const clientRoute=require("./routes/cliente.route");
+app.use("/cliente",clientRoute);
+
 app.use((req, res, next) => {
   const err = new Error(
     "The requested route does not exist, or the call method is invalid."
