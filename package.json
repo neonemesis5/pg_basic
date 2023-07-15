@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon ./bin/server.js",
     "test": "\"echo \\\"Error: no test specifies\\\" && exit 1\""
+    
   },
   "keywords": [
     "apiPizzas"
@@ -32,10 +33,12 @@
   "devDependencies": {
     "eslint": "^8.43.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "jest": "^25.0.0",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "standard": "^17.1.0"
   }
 }
