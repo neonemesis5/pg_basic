@@ -53,6 +53,9 @@ app.use("/opcajaban",opcabanRouter);
 const ProductsRoute=require("./routes/productos.route");
 app.use("/productos",ProductsRoute); 
 
+const PedidoRouter=require("./routes/pedidodet.route");
+app.use("/pedidos",PedidoRouter);
+
 app.use((req, res, next) => {
   const err = new Error(
     "The requested route does not exist, or the call method is invalid."

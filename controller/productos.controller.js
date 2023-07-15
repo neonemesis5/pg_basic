@@ -39,7 +39,9 @@ class Productos{
       }else if (req.body.hasOwnProperty('productos')) {
         resp=await setQTYProductsById({productos:req.body.productos});
       }else{
-        console.log("objeto no reconocido");
+        // console.log("objeto no reconocido");
+        resp.message="Error this json not contained products"
+        resp.status=400;
       }
       return res.status(resp.status).send(resp);
     } catch (error) {console.log("-->",error);
