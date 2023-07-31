@@ -1,5 +1,5 @@
 // Database
-const { Model, DataTypes, UUIDV4, literal } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const { sequelize } = require('../config/database');
 
 class catProductoModel extends Model {}

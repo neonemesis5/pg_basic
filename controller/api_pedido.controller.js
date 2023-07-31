@@ -27,7 +27,7 @@ class PedidoDetalle {
 			return res.status(resp.status).send(resp);
 		} catch (error) {
 			// console.log("error --->>",error);
-			return res.status(500).send({ message: 'error -> ', error });
+			return res.status(500).send({ message: 'error in regPedido -> ', error });
 		}
 	}
 }

@@ -26,13 +26,13 @@ prodDetalleModelo.init(
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		pcsto_usd: {
+		pcosto_usd: {
 			type: DataTypes.DECIMAL(5, 2),
 		},
-		pcsto_cop: {
+		pcosto_cop: {
 			type: DataTypes.DECIMAL(12, 4),
 		},
-		pcsto_bss: {
+		pcosto_bss: {
 			type: DataTypes.DECIMAL(12, 4),
 		},
 		cantidad: {
